@@ -19,7 +19,7 @@ run('scripts/run_first_case_qp_kkt.m')
 - 终端水平加速度 `a_x,f = 1.0 m/s^2`
 - 终端垂向加速度 `a_h,f = 0.0 m/s^2`
 - 总时间 `T = 5.50 s`
-- release thrust acceleration `20.0 m/s^2`
+- release thrust acceleration `16.3 m/s^2`
 
 该工况是本 standalone planner 仓库内置的第一个 40 deg 基础工况。
 
@@ -50,14 +50,14 @@ run('scripts/run_first_case_qp_kkt.m')
 ## 本次结果
 
 - QP exitflag：`1`
-- QP max slack：`0.232802`
-- KKT path RMSE：`1.615323 m`
-- KKT x RMSE：`0.627530 m`
-- KKT h RMSE：`1.488447 m`
-- KKT speed RMSE：`0.882973 m/s`
-- KKT endpoint x error：`-1.25056e-11 m`
-- KKT endpoint h error：`9.54969e-12 m`
-- KKT fit score：`19.23 / 100`
+- QP max slack：`0.450862`
+- KKT path RMSE：`2.611950 m`
+- KKT x RMSE：`0.593320 m`
+- KKT h RMSE：`2.543670 m`
+- KKT speed RMSE：`1.112873 m/s`
+- KKT endpoint x error：`-1.45519e-11 m`
+- KKT endpoint h error：`-7.81622e-08 m`
+- KKT fit score：`0.00 / 100`
 
 ## realtime preview 结果
 
@@ -66,13 +66,13 @@ run('scripts/run_first_case_qp_kkt.m')
 - terminal passthrough threshold：`0.400 s`
 - realtime preview 假设当前状态理想等于 QP 同时刻的 `p/v/a/j`，不接入真实动力学和控制器。
 - 当剩余时间小于最小 horizon 时，不再构造人工 0.4 s 终端重规划，而是直接输出终端短预瞄状态，避免终端速度假跳变。
-- realtime preview path RMSE：`0.077545 m`
-- realtime preview x RMSE：`0.074352 m`
-- realtime preview h RMSE：`0.022024 m`
-- realtime preview speed RMSE：`0.044690 m/s`
+- realtime preview path RMSE：`0.077928 m`
+- realtime preview x RMSE：`0.074418 m`
+- realtime preview h RMSE：`0.023124 m`
+- realtime preview speed RMSE：`0.038525 m/s`
 - realtime preview endpoint x error：`0 m`
 - realtime preview endpoint h error：`0 m`
-- realtime preview fit score：`96.12 / 100`
+- realtime preview fit score：`96.10 / 100`
 
 ## 注意
 

@@ -43,7 +43,7 @@ V_f    = 9 m/s
 a_x,f  = 1 m/s^2
 a_h,f  = 0 m/s^2
 T      = 5.5 s
-release thrust acceleration = 20 m/s^2
+release thrust acceleration = 16.3 m/s^2
 ```
 
 起点：
@@ -61,6 +61,17 @@ ax0 = a_release cos(theta0)
 ah0 = a_release sin(theta0) - g
 a0  = [ax0, 0, -ah0]
 ```
+
+当前默认 `a_release = 16.3 m/s^2` 来自当前飞机推力模型的 0.95 油门估算：
+
+```text
+mass              = 3.2 kg
+single rotor T    = 6.519 N
+8 rotor total T   = 52.152 N
+a_release = T/m   = 52.152 / 3.2 = 16.3 m/s^2
+```
+
+该值表示 8 个主桨沿机体系 `+X_b` 的等效推力加速度。轨迹规划时再根据初始支角 `theta0` 分解到前向和向上方向，并在高度方向扣除重力。
 
 终点：
 

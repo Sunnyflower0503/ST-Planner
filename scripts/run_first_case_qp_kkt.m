@@ -66,7 +66,7 @@ cfg.poly_order = 9;
 cfg.n_eval = 401;
 cfg.n_check = 140;
 cfg.coeff_regularization = 1e-7;
-cfg.release.thrust_accel_mps2 = 22.0;
+cfg.release.thrust_accel_mps2 = 16.3;
 
 cfg.shaped.h_tau = [0.78, 0.84];
 cfg.shaped.h_ratio = [0.76, 0.82];
@@ -105,7 +105,7 @@ c.a_h_f_mps2 = 0;
 c.t_total_s = 5.5;
 c.h_shape_p = 1.15;
 c.gamma_max_deg = 65;
-c.release_thrust_accel_mps2 = 20;
+c.release_thrust_accel_mps2 = 16.3;
 end
 
 function [traj, exitflag, info] = solve_constrained(c, cfg, param)
